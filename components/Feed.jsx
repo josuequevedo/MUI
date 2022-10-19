@@ -1,16 +1,17 @@
-import { Box } from '@mui/material';
-import { Navbar } from './Navbar';
+import { Box } from '@mui/system';
+import Post from './Post';
 
 export const Feed = () => {
 	return (
 		<Box
 			sx={{
-				bgcolor: 'aqua',
 				flex: 4,
 				p: 2,
 			}}
 		>
-			Feed
+			<Post />
+			<Post />
+			<Post />
 		</Box>
 	);
 };

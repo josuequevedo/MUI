@@ -3,7 +3,7 @@ import { Feed } from '../components/Feed';
 import { Rightbar } from '../components/Rightbar';
 import { Navbar } from '../components/Navbar';
 import Head from 'next/head';
-import { Box, Stack } from '@mui/material';
+import { Box, createTheme, Stack } from '@mui/material';
 
 export default function Home() {
 	return (
