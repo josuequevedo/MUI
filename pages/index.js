@@ -2,10 +2,11 @@ import { Sidebar } from '../components/Sidebar';
 import { Feed } from '../components/Feed';
 import { Rightbar } from '../components/Rightbar';
 import { Navbar } from '../components/Navbar';
+import { Add } from '../components/Add';
 import Head from 'next/head';
-import { Box, createTheme, Stack } from '@mui/material';
+import { Box, createTheme, Stack, ThemeProvider } from '@mui/material';
 
-export default function Home() {
+export default function Home({ setDarkMode, darkMode }) {
 	return (
 		<>
 			<Head>
@@ -21,19 +22,26 @@ export default function Home() {
 				/>
 			</Head>
 
-			<Box sx={{ boxSizing: 'border-box' }}>
+			<Box
+				sx={{
+					boxSizing: 'border-box',
+					bgcolor: 'background.default',
+					color: 'text.primary',
+				}}
+			>
 				<Navbar />
 				<Stack
 					direction='row'
 					spacing={2}
 					justifyContent='space-between'
 				>
-					<Sidebar />
+					<Sidebar setDarkMode={setDarkMode} darkMode={darkMode} />
 
 					<Feed />
 
 					<Rightbar />
 				</Stack>
+				<Add />
 			</Box>
 		</>
 	);

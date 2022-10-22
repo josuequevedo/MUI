@@ -15,7 +15,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
-export const Sidebar = () => {
+export const Sidebar = ({ setDarkMode, darkMode }) => {
 	return (
 		<Box
 			sx={{
@@ -92,7 +92,11 @@ export const Sidebar = () => {
 								<ModeNightIcon />
 							</ListItemIcon>
 
-							<Switch defaultChecked />
+							<Switch
+								onChange={(e) =>
+									setDarkMode(darkMode === 'light' ? 'dark' : 'light')
+								}
+							/>
 						</ListItemButton>
 					</ListItem>
 				</List>
